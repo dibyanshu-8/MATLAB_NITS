@@ -1,0 +1,17 @@
+%code for circular convolution using formula
+clc;
+clear;
+X=input('enter length of x=');
+x=input('enter x=');
+H=input('enter length of H=');
+h=input('enter h=');
+N=X;
+
+y=zeros(1,N);
+for n=1:N
+    for k=1:N
+       y(n)=y(n)+x(k)*h(mod(n-k,N)+1);
+       
+    end
+end
+disp(y);

@@ -1,0 +1,21 @@
+%generation of basic signals
+
+clc;
+clear;
+n=input('enter the n value:');
+t=0:1:n-1;
+
+%step signal
+y1=ones(1,n);
+stem(y1,n);
+subplot(3,3,1);
+xlabel("t");
+ylabel('y1');
+%ramp signal
+stem(t,t);
+
+%unit impulse signal
+y=[zeros(1,2),ones(1,1),zeros(1,2)];
+stem(t,y);
+
+

@@ -1,0 +1,6 @@
+%verification of sampling theorm & aliasing
+
+%up sampling by an integral factor
+n=0:50;
+x=sin(2*pi*0.12*n);
+y=

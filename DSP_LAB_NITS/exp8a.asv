@@ -1,0 +1,17 @@
+%iir filter using impulse invariance method.
+clc;
+clear;
+T=1;
+wp=0.2*pi;
+ws=0.6*pi;
+e=sqrt(1/(0.8^2)-1);
+As=1/0.2;
+wp=wp/T;
+ws=ws/T;
+N=ceil((1/2)*log10(e^2/(As^2-1))/(log10(wp/ws)));
+wc=wp/((e^2)^(1/(2*N)));
+[b,a]=butter(N,wc,'low','s');
+Hs=tf(b,a);
+[numd,dend]=impinvar(b,a,1/T);
+w=0:0.01:pi;
+Hw=freqz(numd,dend,w )

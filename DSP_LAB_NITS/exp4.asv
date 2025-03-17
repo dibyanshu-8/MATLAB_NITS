@@ -1,0 +1,26 @@
+%circular convolution of 2 sequences using dft or fft function.
+x1=[1,1,1,1];
+x2=[1,1,1,1];
+X1=fft(x1);
+X2=fft(x2);
+Y=X1.*X2;
+y=ifft(Y);
+z=cconv(x1,x2,length(x2));
+disp(y);
+figure;
+subplot(4,1,1);
+stem(0:length(x1)-1,x1);
+title('sequence of x1');
+grid on;
+subplot(4,1,2);
+stem(0:length(x2)-1,x2);
+title('sequence of x2');
+grid on;
+subplot(4,1,3);
+stem(0:length(y)-1,real(y));
+title('circular')
+grid on;
+subplot(4,1,4);
+stem(0:length(z)-1,real(z));
+grid on;
+

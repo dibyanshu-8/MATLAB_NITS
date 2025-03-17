@@ -1,0 +1,17 @@
+clc;
+clear;
+n=-6:1:-4;
+y=zeros(1,3);
+stem(n,y);
+hold on;
+n=-3:1:-1;
+y=ones(1,3);
+stem(n,y);
+hold on;
+n=0:1:3;
+y1=1-n/3;
+stem(n,y1);
+hold on;
+n=4:1:7;
+y1=zeros(1,4);
+stem(n,y1);
